@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Virtual Teacher Journal</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow {
+        background-color: #f5f6fa;
+    }
+    QGroupBox {
+        border: 1px solid #dcdde1;
+        border-radius: 5px;
+        margin-top: 1ex;
+        padding: 10px;
+    }
+    QGroupBox::title {
+        subcontrol-origin: margin;
+        left: 10px;
+        padding: 0 3px;
+    }
+    QListWidget, QTableWidget {
+        background-color: white;
+        border: 1px solid #dcdde1;
+        border-radius: 4px;
+        padding: 5px;
+    }
+    QPushButton {
+        background-color: #40739e;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        min-width: 80px;
+    }
+    QPushButton:hover {
+        background-color: #487eb0;
+    }
+    QHeaderView::section {
+        background-color: #40739e;
+        color: white;
+        padding: 5px;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Manager</string>
+      </property>
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QPushButton" name="addGroupButton">
+         <property name="text">
+          <string>➕ Новая группа</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addStudentButton">
+         <property name="text">
+          <string>👤 Новый студент</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addSubjectButton">
+         <property name="text">
+          <string>📚 Новый предмет</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="addGradeButton">
+         <property name="text">
+          <string>⭐ Новая оценка</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="subjectsComboBox">
+         <property name="placeholderText">
+          <string>Выберите предмет</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QGroupBox" name="groupsSection">
+       <property name="title">
+        <string>Groups</string>
+       </property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QListWidget" name="groupsList"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="studentsSection">
+       <property name="title">
+        <string>Students</string>
+       </property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QListWidget" name="studentsList"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="gradesSection">
+       <property name="title">
+        <string>Marks</string>
+       </property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QTableWidget" name="gradesTable">
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>3</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>Предмет</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Оценка</string>
+           </property>
+           <property name="foreground">
+            <brush brushstyle="NoBrush">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Дата</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
