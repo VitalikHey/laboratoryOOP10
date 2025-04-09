@@ -5,24 +5,24 @@
 #include "managedObject.h"
 #include "subject.h"
 
-class Grade {
+class Mark {
     int value;
-    QDate date;
-    ManagedObject<Subject> subject;
+    QDate markDate;
+    ManagedObject<Discipline> m_disciplines;
 public:
-    Grade(int value, const QDate& date, ManagedObject<Subject>&& subject)
-        : value(value), date(date), subject(std::move(subject)) {}
+    Mark(int value, const QDate& date, ManagedObject<Discipline>&& disciplines)
+        : value(value), markDate(date), m_disciplines(std::move(disciplines)) {}
 
     int getValue() const { 
         return value; 
     }
 
-    QDate getDate() const { 
-        return date;
+    QDate getMarkDate() const {
+        return markDate;
     }
 
-    const ManagedObject<Subject>& getSubject() const {
-        return subject; 
+    const ManagedObject<Discipline>& getDisciplines() const {
+        return m_disciplines;
     }
 };
 

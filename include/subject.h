@@ -3,10 +3,10 @@
 
 #include <QString>
 
-class Subject {
+class Discipline {
     QString name;
 public:
-    explicit Subject(const QString& name) : name(name) {}
+    explicit Discipline(const QString& name) : name(name) {}
     QString getName() const { return name; }
 };
 
